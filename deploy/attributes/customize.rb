@@ -1,4 +1,4 @@
-if bsx[:production]
+if default[application][:env] == "production"
     Chef::Log.info('Using production deploy')
 else
     Chef::Log.info('Using QA deploy')
