@@ -1,3 +1,5 @@
+include_attribute 'deploy::rails_stack'
+
 node[:deploy].each do |application, deploy|
   if default[application][:env] == "production"
     Chef::Log.info('Using production deploy')
