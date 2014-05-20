@@ -4,7 +4,7 @@ node[:deploy].each do |application, deploy|
   Chef::Log.error(deploy)
   branches = %x(git branch -l)
   branches.each do |branch|
-    bsx_qa_deploy do
+    branch_deploy do
       deploy_data deploy
       branch_name branch
       app application

@@ -1,4 +1,4 @@
-define :bsx_qa_deploy do
+define :branch_deploy do
   application = params[:app]
   deploy = params[:deploy_data]
   branch = params[:branch_name]
