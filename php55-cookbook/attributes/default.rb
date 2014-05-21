@@ -20,4 +20,7 @@ case node["platform_family"]
   when "debian"
     node.default['php55']['dotdeb']['uri'] = "http://packages.dotdeb.org"
     node.default['php55']['dotdeb']['distribution'] = "wheezy"
+  when "ubuntu"
+    node.default['php55']['ondrej']['uri'] = "ppa:ondrej/php5"
+    node.default['php55']['ondrej']['distribution'] = "main"
 end

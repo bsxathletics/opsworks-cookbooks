@@ -18,13 +18,12 @@
 Chef::Log.info('Platform: '+node[:platform])
 case node[:platform]
 
-  when "debian"
+  when "ubuntu"
     include_recipe "apt"
-    apt_repository "wheezy-php55" do
-      uri "#{node['php55']['dotdeb']['uri']}"
-      distribution "#{node['php55']['dotdeb']['distribution']}-php55"
+    apt_repository "ondrej/php5" do
+      uri "#{node['php55']['ondrej']['uri']}"
+      distribution "#{node['php55']['ondrej']['distribution']}"
       components ['all']
-      key "http://www.dotdeb.org/dotdeb.gpg"
       action :add
     end
 
