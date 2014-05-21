@@ -63,7 +63,7 @@ define :branch_deploy do
   # setup deployment & checkout
   if deploy[:scm] && deploy[:scm][:scm_type] != 'other'
     Chef::Log.debug("Checking out source code of application #{application} with type #{deploy[:application_type]}")
-    deploy deploy[:deploy_to] do
+    deploy_branch deploy[:deploy_to] do
       provider Chef::Provider::Deploy.const_get(deploy[:chef_provider])
       if deploy[:keep_releases]
         keep_releases deploy[:keep_releases]
