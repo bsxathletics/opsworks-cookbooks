@@ -89,3 +89,7 @@ end
     only_if { apt_installed? }
   end
 end
+
+execute 'add php55 repo' do
+  command "ruby apt_repository 'ppa:ondrej/php5' do components ['main'] end"
+end

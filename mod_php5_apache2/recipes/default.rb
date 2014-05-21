@@ -8,10 +8,4 @@ node[:mod_php5_apache2][:packages].each do |pkg|
   Chef::Log.info('Installed package: ' + pkg.to_s)
 end
 
-include_recipe 'apt'
-
-execute 'add php55 repo' do
-  command "ruby apt_repository 'ppa:ondrej/php5' do components ['main'] end"
-end
-
 include_recipe 'apache2::mod_php5'
