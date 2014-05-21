@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+                               Chef::Log.info('Platform family set to: '+node['platform_family'])
 case node["platform_family"]
   when "debian"
     node.default['php55']['dotdeb']['uri'] = "http://packages.dotdeb.org"
