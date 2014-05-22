@@ -78,5 +78,5 @@ case node[:platform]
 		action :add
 	end
 
-	  include_recipe "php"
+	  include_recipe "php::configure"
   end
