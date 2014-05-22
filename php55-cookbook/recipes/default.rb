@@ -21,9 +21,8 @@ case node[:platform]
   when "ubuntu"
     include_recipe "apt"
     apt_repository "ondrej/php5" do
-      uri "#{node['php55']['ondrej']['uri']}"
-      distribution "#{node['php55']['ondrej']['distribution']}"
-      components ['all']
+      repo_name "ppa:ondrej/php5"
+      components "main"
       action :add
     end
 
