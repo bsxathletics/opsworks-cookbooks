@@ -78,7 +78,7 @@ case node[:platform]
       action :add
     end
     package "php5" do
-      action :update
+      action :upgrade
     end
 
     include_recipe "php::configure"
