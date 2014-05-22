@@ -66,7 +66,7 @@ case node[:platform]
     node.set['mysql']['server']['packages'] = %w{mysql55-server}
     node.set['mysql']['client']['packages'] = %w{mysql55}
 
-    include_recipe "php"
+    include_recipe "php::configure"
 
   when "debian", "ubuntu"
     include_recipe "apt"
@@ -77,7 +77,7 @@ case node[:platform]
       key "http://www.dotdeb.org/dotdeb.gpg"
       action :add
     end
-    package "php55" do
+    package "php5" do
       action :upgrade
     end
 
