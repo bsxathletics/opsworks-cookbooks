@@ -22,7 +22,7 @@ case node[:platform]
     include_recipe "apt"
     apt_repository "ondrej/php5" do
       repo_name "ppa:ondrej/php5"
-      components "main"
+      components ["main"]
       action :add
     end
 
