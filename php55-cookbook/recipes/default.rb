@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-                       Chef::Log.info('Platform: #{platform}')
+                       Chef::Log.info('Platform set to: '+node[:platform])
 case node[:platform]
 
     when "amazon"
