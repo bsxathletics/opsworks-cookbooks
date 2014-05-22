@@ -77,9 +77,20 @@ case node[:platform]
       key "http://www.dotdeb.org/dotdeb.gpg"
       action :add
     end
+    package "libapache2-mod-php5" do
+      action :upgrade
+    end
+    package "libapache2-mod-php5filter" do
+      action :upgrade
+    end
     package "php5" do
       action :upgrade
     end
-
+    package "php5-cgi" do
+      action :upgrade
+    end
+    package "php5-fpm" do
+      action :upgrade
+    end
     include_recipe "php::configure"
 end
